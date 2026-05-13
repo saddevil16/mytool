@@ -17,15 +17,13 @@ load_quick_tip() {
 
 menu_UI() {
     clear
-    #DEBUG
-	echo "DEBUG: TOOL_DIR: $TOOL_DIR"
     echo -e "${C}===================================================${RST}"
     echo -e "${YB} MyTool - v$version ${RST}"
     echo -e "${C}---------------------------------------------------${RST}"
     echo -e " ${GB}[1]${RST} - About."
     echo -e " ${GB}[2]${RST} - Jenkins HTTPS Cert renewal related."
-    echo -e " ${GB}[99]${RST} - Testing Ground [Experimental]"
     echo ""
+    echo -e " ${GB}[99]${RST} - Testing Ground [Experimental]"
     echo -e " ${RB}[Q]${RST} - Quit/Exit."
     echo -e "${C}---------------------------------------------------${RST}"
     load_quick_tip
