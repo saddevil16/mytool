@@ -1,7 +1,8 @@
 #!/bin/bash
 
 about_UI() {
-	local version="$(cat "$TOOL_DIR/.modules/version.txt")"
+	local version
+	version="$(cat "$TOOL_DIR/.modules/version.txt")"
 	clear
 	echo -e "${C}===================================================${RST}"
 	echo -e "${YB} MyTool - v$version${RST}"
@@ -13,8 +14,10 @@ about_UI() {
 }
 
 about_UI_updated() {
+	# shellcheck disable=SC1091
 	source "$TOOL_DIR/.modules/check_update.sh"
-	local version="$(cat "$TOOL_DIR/.modules/version.txt")"
+	local version
+	version="$(cat "$TOOL_DIR/.modules/version.txt")"
 	clear
 	echo -e "${C}===================================================${RST}"
 	echo -e "${Y} MyTool - v$version${RST}"
