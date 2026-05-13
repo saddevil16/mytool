@@ -2,6 +2,8 @@
 TOOL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$TOOL_DIR/.modules/colors.sh"
+source "$TOOL_DIR/.modules/about.sh"
+
 version=$(cat "$TOOL_DIR/.modules/version.txt")
 
 load_quick_tip() {
@@ -23,6 +25,7 @@ menu_UI() {
     echo -e " ${GB}[1]${RST} - About."
     echo -e " ${GB}[2]${RST} - Jenkins HTTPS Cert renewal related."
     echo -e " ${GB}[99]${RST} - Testing Ground [Experimental]"
+    echo ""
     echo -e " ${RB}[Q]${RST} - Quit/Exit."
     echo -e "${C}---------------------------------------------------${RST}"
     load_quick_tip
@@ -34,7 +37,7 @@ while true; do
     read -r -p "Choose option: " availableOptions
 
     case $availableOptions in
-        1) source "$TOOL_DIR/.modules/about.sh" ;;
+        1) show_about ;;
     	2) source "$TOOL_DIR/.modules/jenkins_https.sh" ;;
     	99) source "$TOOL_DIR/.modules/test.sh" ;;
         Q|q|0) echo "Exiting.." ; exit 1 ;;
