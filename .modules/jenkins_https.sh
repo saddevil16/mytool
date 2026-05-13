@@ -65,6 +65,7 @@ show_UI() {
     echo -e "${C}---------------------------------------------------${RST}"
     echo " Available options:"
     echo -e "${G} [1]${RST} - Check processed Jenkins HTTPS cert expiry."
+    echo -e "${G} [2]${RST} - Process Certbot renewed Jenkins HTTPS cert."
     echo -e "${R} [B]${RST} - Back to main menu."
     echo -e "${C}===================================================${RST}"
 }
