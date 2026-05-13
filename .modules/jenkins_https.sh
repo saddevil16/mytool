@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# shellcheck disable=SC1091
 source "$TOOL_DIR/.modules/colors.sh"
 
 loadEnv() {
@@ -28,9 +29,9 @@ processCert() {
     fi
 
     # shellcheck disable=SC2024
-    echo "$PASS" | sudo -S cat "$cert_dir/fullchain.pem" > $https_dir/fullchain.pem
+    echo "$PASS" | sudo -S cat "$cert_dir/fullchain.pem" > "$https_dir/fullchain.pem"
     # shellcheck disable=SC2024
-    echo "$PASS" | sudo -S cat "$cert_dir/privkey.pem" > $https_dir/privkey.pem
+    echo "$PASS" | sudo -S cat "$cert_dir/privkey.pem" > "$https_dir/privkey.pem"
     unset PASS
 
     echo "Generated $https_dir/jenkins.jks"
@@ -83,6 +84,7 @@ while true; do
         	;;
         b|B) return 0 ;;
         *) 
+        	# shellcheck disable=SC1091
             source "$TOOL_DIR/.modules/handle_error.sh" "$option" 
             ;;
     esac
