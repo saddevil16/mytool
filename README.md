@@ -26,6 +26,8 @@
 .env file:
 ```.env
 SUDO_PASS="PASSWORD123"
-JENKINS_FULLCHAIN_PEM="/path/to/your/fullchain.pem"
-LETSENCRYPT_FULLCHAIN_PEM="/etc/letsencrypt/live/your.domain.name/fullchain.pem"
+
+# Env for jenkins_https modules
+JENKINS_FULLCHAIN_PEM_PATH="/path/to/your/fullchain/pem"
+LETSENCRYPT_FULLCHAIN_PEM_PATH="/etc/letsencrypt/live/your.domain.name/"
 ```
