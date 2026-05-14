@@ -3,9 +3,20 @@
 getMachineIP() {
 	local localIP
 	local publicIP
+	local OS
 
-	localIP=$(ipconfig getifaddr en1)
-	publicIP=$(curl ifconfig.me)
+	OS=$(uname -a | grep -o '^\w*')
+
+	if [ "$OS" = "Linux" ]; then
+		localIP=$(hostname -I | cut -d' ' -f1)
+	elif [ "$OS" = "Darwin" ]; then
+		localIP=$(ipconfig getifaddr en1)
+	else
+		echo "[Warn] Mytool may or may not be able to check your OS local ip."
+		localIP=$(hostname -I | cut -d' ' -f1)
+	fi
+
+	publicIP=$(curl -s ifconfig.me)
 
 	echo "Public IP: $publicIP"
 	echo "Local IP : $localIP"
