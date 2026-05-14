@@ -127,11 +127,11 @@ launchctl_helper_UI() {
 
 	case "$options" in
 		1)	check_service ;;
-		2)	list_services 
+		2)	loadEnv && list_services 
 			unset LAUNCHAGENTS_PATH ;;
-		3)	stop_service
+		3)	loadEnv && stop_service
 			unset LAUNCHAGENTS_PATH ;;
-		4)	start_service
+		4)	loadEnv && start_service
 			unset LAUNCHAGENTS_PATH ;;
 		b|B) return 0 ;;
 		*)	source "$TOOL_DIR/.modules/handle_error.sh" "$options" ;;
