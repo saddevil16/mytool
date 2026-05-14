@@ -25,8 +25,6 @@ menu_UI() {
     echo -e " ${GB}[2]${RST} - Jenkins HTTPS Cert renewal related."
     echo -e " ${GB}[3]${RST} - Launchctl Helper"
     echo -e " ${GB}[4]${RST} - Network Tools"
-    echo ""
-    echo -e " ${GB}[99]${RST} - Testing Ground [Experimental]"
     echo -e " ${RB}[Q]${RST} - Quit/Exit."
     echo -e "${C}---------------------------------------------------${RST}"
     load_quick_tip
