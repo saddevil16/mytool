@@ -4,7 +4,6 @@ TOOL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$TOOL_DIR/.modules/colors.sh"
 source "$TOOL_DIR/.modules/about.sh"
 source "$TOOL_DIR/.modules/launchctl_helper.sh"
-source "$TOOL_DIR/.modules/network_tool.sh"
 
 version=$(cat "$TOOL_DIR/.modules/version.txt")
 
@@ -42,7 +41,7 @@ while true; do
         1) show_about ;;
     	2) source "$TOOL_DIR/.modules/jenkins_https.sh" ;;
     	3) launchctl_helper_UI ;;
-        4) souce "$TOOL_DIR/.modules/network_tool.sh" ;;
+        4) source "$TOOL_DIR/.modules/network_tool.sh" ;;
     	99) source "$TOOL_DIR/.modules/test.sh" ;;
         Q|q|0) echo "Exiting.." ; exit 1 ;;
         *) source "$TOOL_DIR/.modules/handle_error.sh" "$availableOptions" ;;
