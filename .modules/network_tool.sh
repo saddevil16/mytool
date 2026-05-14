@@ -41,7 +41,7 @@ checkListenPort() {
 show_UI() {
     clear
     echo -e "${C}===================================================${RST}"
-    echo -e "${Y} Mac Networking Tool${RST}"
+    echo -e "${Y} Networking Tool${RST}"
     echo -e "${C}---------------------------------------------------${RST}"
     echo " Available options:"
     echo -e "${G} [1]${RST} - Get Local & Public IP."
@@ -51,7 +51,7 @@ show_UI() {
 }
 
 while true; do
-	showUI
+	show_UI
 	read -r -p "Choose option: " option
 	case "$option" in
 		1)	getMachineIP ;;
