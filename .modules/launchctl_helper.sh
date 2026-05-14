@@ -94,6 +94,8 @@ check_os() {
 
 	if [ "$op_sys" != "Darwin" ]; then
 		echo -e "${YB}[Warn] Launchctl cli is for macOS, not other system.${RST}"
+	else
+		return 0
 	fi
 
 	read -r -p "Press B to return or any key to continue.." input
