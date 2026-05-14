@@ -32,10 +32,10 @@ checkListenPort() {
 		read -r -p "Press any key to continue.."
 	}
 
-	echo "Available options:"
-	echo " [1] - Show ALL listening port"
-	echo " [2] - Check certain port number"
-	echo " [B] - Back"
+	echo -e "${W}Available options:${RST}"
+	echo -e " ${G}[1]${RST} - Show ALL listening port"
+	echo -e " ${G}[2]${RST} - Check certain port number"
+	echo -e " ${R}[B]${RST} - Back"
 	read -r -p "Choose option: " input
 
 	case "$input" in
