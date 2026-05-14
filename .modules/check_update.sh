@@ -14,7 +14,9 @@ check_update() {
 		echo " New version available: v$latestVersion"
 		echo ""
 		echo " Obtain latest update from $repo_url"
+		return 0 # update available
 	else
 		echo " No new update."
+		return 1 # no update
 	fi
 }

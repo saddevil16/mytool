@@ -25,11 +25,31 @@ about_UI_updated() {
 	echo " Simple tool for my issues quick-fix."
 	echo ""
 	check_update
+	has_update=$?
 	echo ""
 	echo -e "${G} Inquiry:${RST} contact@pejal.org"
 	echo -e "${C}===================================================${RST}"
-	read -r -p "Press any key to return.."
-	return 0
+	if [ "$has_update" -eq 0 ]; then
+		read -r -p "Get new update? (y/n) or press any key to return.. " input
+	else
+		read -r -p "Press any key to return.."
+	fi
+
+	case "$input" in
+		y|Y) 
+			echo "Obtaining new update.."
+			if git pull ; then
+				echo "Updated successfully."
+				sleep 2
+				return 0
+			else
+				echo "Update failed.."
+				sleep 2
+				return 1
+			fi
+			;;
+		*)	return 0 ;;
+	esac
 }
 
 handle_about_input() {
