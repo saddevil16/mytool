@@ -9,6 +9,8 @@ about_UI() {
 	echo -e "${C}---------------------------------------------------${RST}"
 	echo " Simple tool for my issues quick-fix."
 	echo ""
+	echo " Source: https://github.com/saddevil16/mytool"
+	echo ""
 	echo -e "${GB} Inquiry:${RST} contact@pejal.org"
 	echo -e "${C}===================================================${RST}"
 }
