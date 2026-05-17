@@ -24,9 +24,9 @@ url_reachable() {
     status="$?"
 
     if [ "$status" != 0 ]; then
-        echo -e " ${YB}[Warn]${RST} Unable to check version, please check your"
-        echo " internet connection."
-        echo ""
+        return 1
+    else
+        return 0
     fi
 }
 
@@ -41,7 +41,9 @@ check_update() {
     if url_reachable "$repo_version_url"; then
         latestVersion=$(curl -s "$repo_version_url")
     else
-        latestVersion="$currentVersion"
+        echo -e " ${YB}[Warn]${RST} Unable to check version, please check your"
+        echo " internet connection."
+        echo ""
     fi
 
 	case "$(version_cmp "$latestVersion" "$currentVersion")" in
